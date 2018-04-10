@@ -91,7 +91,7 @@ legend {
 }
 
 #search-button {
-  width: 75px;
+  width: 4em;
 }
 
 #search-bar {
@@ -99,8 +99,9 @@ legend {
   width: 10em;
 }
 
-.form-inline {
-  float: right;
+.search-container {
+  display: flex;
+  justify-content: end;
 }
 
 .card {
@@ -181,4 +182,23 @@ legend {
 
 .container .text-muted {
   margin: 10px 0;
+}
+
+@media (max-width: 1000px) {
+  .search-container {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 575px) {
+  #search-button {
+    width: 3em;
+  }
+}
+
+@media (max-width: 440px) {
+  #search-bar {
+    border-radius: 0;
+    width: 5.8em;
+  }
 }

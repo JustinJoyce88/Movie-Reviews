@@ -8,12 +8,15 @@
       
       <a id="new-movie" class="btn btn-primary btn-large" href="/movies/new">Add New Movie</a>
       <hr>
-      <form action="/movies" method="GET" class="form-inline">
-        <input id="search-bar" class="form-control" name="search" type="search" placeholder="Search">
-        <button class="btn btn-primary mx-2" id="search-button" type="submit">
-          <i class="fas fa-search"></i>
-        </button>
-      </form>
+      <div class="container search-container">
+
+        <form action="/movies" method="GET" class="form-inline">
+          <input id="search-bar" class="form-control" name="search" type="search" placeholder="Search">
+          <button class="btn btn-primary mx-2" id="search-button" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
     </div>
   </header>
 
