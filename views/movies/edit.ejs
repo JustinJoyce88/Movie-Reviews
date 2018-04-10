@@ -12,11 +12,11 @@
         </div>
         <div class="form-group">
           <label for="description">Description *</label>
-          <textarea name="movie[description]" id="description" cols="36" rows="5" required></textarea>
+          <textarea name="movie[description]" id="description" cols="36" rows="5" required><%= movie.description %></textarea>
         </div>
         <div class="form-group">
           <label for="rating">Rating *</label>
-          <input class="form-control" id="rating" type="number" name="movie[rating]" value="<%= movie.rating %>" max="5" min="1" step="1" required>
+          <input class="form-control" id="rating" type="number" name="movie[rating]" value="<%= movie.rating %>" max="10" min="0" step="1" required>
         </div>
         <div class="form-group">
           <label for="image">Image *</label>
