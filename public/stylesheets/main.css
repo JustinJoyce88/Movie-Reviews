@@ -46,6 +46,10 @@ legend {
   text-align: center;
 }
 
+textarea {
+  width: 100%;
+}
+
 /* BUTTONS */
 
 .btn {
@@ -151,8 +155,11 @@ legend {
   border: none;
 }
 
+.comment-header {
+  overflow: auto;
+}
+
 #desc-card {
-  height: 34em;
   margin-bottom: .5em;
   border: none;
 }
@@ -190,15 +197,29 @@ legend {
   }
 }
 
+@media (max-width: 990px) {
+  #img-card img {
+    max-width: 20em;
+  }
+}
+
+
 @media (max-width: 575px) {
   #search-button {
     width: 3em;
   }
+  
+  .container .jumbotron {
+    padding: 1em 0;
+  }
 }
 
-@media (max-width: 440px) {
-  #search-bar {
-    border-radius: 0;
-    width: 5.8em;
+@media (max-width: 360px) {
+  #img-card img {
+    max-width: 15em;
+  }
+
+  #comment-title {
+    font-size: 16px;
   }
 }

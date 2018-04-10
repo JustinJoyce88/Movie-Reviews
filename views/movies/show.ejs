@@ -41,11 +41,13 @@
   <div class="row">
     <div class="card" id="comment-card">
       <div class="card-body">
+      <div class="container container-fluid comment-header">
         <h4 id="comment-title">Comments
           <i class="far fa-comment"></i>
         </h4>
         <a class="btn btn-primary float-right" href="/movies/<%= movie._id %>/comments/new">
           <i class="fas fa-plus"></i> Comment</a>
+      </div>
         <hr>
         <div class="row">
           <% movie.comments.forEach(function(comment){ %>
