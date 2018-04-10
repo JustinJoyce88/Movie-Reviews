@@ -16,9 +16,9 @@
             <%= movie.rating %> out of 10</p>
           <p class="submit-text">
             <em>Submitted by:
-              <a href="/users/<%= movie.author.id %>">
-                <%= movie.author.username %>
-              </a>,
+              <!-- <a href="/users/<%= movie.author.id %>"> -->
+                <%= movie.author.username %>,
+              <!-- </a>, -->
               <%= moment(movie.createdAt).fromNow() %>
             </em>
           </p>
