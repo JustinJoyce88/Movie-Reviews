@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Movie Reviews</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet"> 
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+  <link rel="stylesheet" href="/stylesheets/main.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md bg-dark mb-4">
+    <a class="navbar-brand" href="/"><i class="fas fa-film"></i> Movie Reviews</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <li class="nav-item <%= typeof page !== 'undefined' && page === 'movies' ? 'active' : '' %>">
+            <a class="nav-link" href="/movies">Home</a>
+          </li>
+        </li>
+      </ul>
+      <ul class="navbar-nav navbar-right">
+        <% if(!currentUser){ %>
+          <li class="nav-item <%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+          <li class="nav-item <%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>">
+            <a class="nav-link" href="/register">Sign Up</a>
+          </li>
+        <% } else { %>
+          <li class="nav-item"><a class="nav-link" href="#">Signed In As <%= currentUser.username %></a></li>
+          <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+        <% } %>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+      <% if(error && error.length > 0){ %>
+          <div class="alert alert-danger" role="alert">
+              <%= error %>
+          </div>
+      <% } %>
+      <% if(success && success.length > 0){ %>
+          <div class="alert alert-success" role="alert">
+              <%= success %>
+          </div>
+      <% } %>
+      <% if(warning && warning.length > 0){ %>
+          <div class="alert alert-warning" role="alert">
+              <%= warning %>
+          </div>
+      <% } %>
+  </div>
+
+  <div class="container">

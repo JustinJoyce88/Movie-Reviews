@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+
+<div class="row">
+  <div class="col-md-4">
+    <h1><%= user.firstName + " " + user.lastName %></h1>
+    <div class="thumbnail">
+      <img src="<%= user.avatar %>" alt="profile image" srcset="">
+      <div class="caption"><a href="mailto:<%= user.email %>"><%= user.email %></a></div>
+    </div>
+    <div>
+      cardigan fingerstache photo booth leggings you probably haven't heard of them VHS 90's chia cred tofu 3 wolf moon pug asymmetrical swag kogi chillwave biodiesel yr Blue Bottle pop-up keffiyeh authentic keytar chambray Banksy McSweeney's YOLO quinoa small batch squid Tonx try-hard blog butcher retro Kickstarter beard sustainable cornhole tousled lomo pork belly DIY 8-bit selvage dreamcatcher skateboard next level gentrify Schlitz fashion axe irony forage put a bird on it polaroid single-origin coffee meggings street art 
+    </div>
+  </div>
+  <div>
+    <h3><%= user.username %>'s Movies:</h3>
+    <ul>
+      <li>
+        <% movies.forEach(function(movie) { %>
+          <a href="/movies/<%= movie.id %>"><%= movie.name %></a>
+        <% }); %>
+      </li>
+    </ul> 
+  </div>
+</div>
+
+<% include ../partials/footer %>

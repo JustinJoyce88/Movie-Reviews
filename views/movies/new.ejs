@@ -1,0 +1,32 @@
+<% include ../partials/header %>
+
+<div class="row justify-content-center">
+  <div class="col-lg-4 col-md-6 col-sm-8">
+    <form action="/movies" method="POST" enctype="multipart/form-data">
+      <legend>Create New Movie</legend>
+      <div class="form-group">
+        <label for="image">Name *</label>
+        <input class="form-control" type="name" name="movie[name]" placeholder="Name" autofocus required>
+      </div>
+      <div class="form-group">
+        <label for="image">Description</label>
+        <input class="form-control" type="text" name="movie[description]" placeholder="Description">
+      </div>
+      <div class="form-group">
+        <label for="rating">Rating</label>
+        <input class="form-control" type="number" name="movie[rating]" placeholder="Rating" max="5" min="1" step="1">
+      </div>
+      <div class="form-group">
+        <label for="image">Upload Image *</label>
+        <input class="form-control-file" id="image" type="file" name="image" accept="image/*" required>
+      </div>
+      <h6 class="text-muted">* Required</h6>
+      <div class="form-group">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+      </div>
+    </form>
+    <a class="btn btn-primary btn-sm" href="/movies">Back</a>
+  </div>
+</div>
+
+<% include ../partials/footer %>

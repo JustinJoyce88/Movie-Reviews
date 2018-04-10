@@ -1,0 +1,172 @@
+/* GENERAL */
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 150%;
+  font-family: 'Source Sans Pro', sans-serif;
+  background: #E6DADA;
+  background: -webkit-linear-gradient(to top, rgba(39, 64, 70, .3), #E6DADA);
+  background: linear-gradient(to top, rgba(39, 64, 70, .3), #E6DADA);
+  background-attachment: fixed;
+}
+
+a {
+  color: #999;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+hr {
+  background-color: #1dd1a1;
+}
+
+h6 {
+  font-size: .8em;
+}
+
+/* BUTTONS */
+.btn {
+  border: none;
+  border-radius: 0;
+  -webkit-box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.2) !important;
+  -moz-box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.2);
+  box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.2);
+  margin: .2em;
+}
+
+.btn-primary,
+.btn-primary:focus {
+  background-color: #0d8d6c !important;
+  color: #c8d6e5 !important;
+}
+
+.btn-primary:hover {
+  background-color: #0f9c78;
+  color: white !important;
+}
+
+.btn-warning {
+  background-color: #ff9f43;
+}
+
+.btn-danger {
+  background-color: #ee5253;
+}
+
+/* NAV */
+
+.navbar {
+  background-color: #222f3e !important;
+}
+
+/* MOVIE LIST */
+
+.container .jumbotron {
+  background-color: #8395a7;
+  padding: 1rem 4rem;
+  border-radius: 0 !important;
+  overflow: auto;
+}
+
+#search-button {
+  width: 75px;
+}
+
+#search-bar {
+  border-radius: 0;
+  width: 10em;
+}
+
+.form-inline {
+  float: right;
+}
+
+.card {
+  border-radius: 0;
+  color: #c8d6e5;
+}
+
+.card-img-top {
+  border-radius: 0;
+}
+
+.card-body {
+  background-color: rgba(95, 115, 135, .6);
+  color: #222f3e;
+}
+
+.card a {
+  color: #405975;
+}
+
+/* MOVIE PAGE */
+
+.delete-form {
+  display: inline;
+}
+
+.row.text-center {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.submit-text {
+  font-size: .75rem;
+}
+
+#comment-title {
+  display: inline;
+}
+
+#comment-card {
+  width: 100%;
+  margin: 0 1em 4em 1em;
+  border: none;
+}
+
+#desc-card {
+  height: 34em;
+  margin-bottom: .5em;
+  border: none;
+}
+
+#img-card {
+  margin-bottom: .5em;
+  border: none;
+}
+
+/* FOOTER */
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #10161d;
+}
+
+.footer a {
+  color: #999;
+}
+
+.container .text-muted {
+  margin: 10px 0;
+}

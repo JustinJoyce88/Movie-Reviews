@@ -1,0 +1,36 @@
+<% include ../partials/header %>
+
+  <header class="jumbotron">
+    <div class="container text-center">
+      <h1>Movie Reviews</h1>
+      <p>Post and comment on movies added by users like you!</p>
+
+      
+      <a id="new-movie" class="btn btn-primary btn-large" href="/movies/new">Add New Movie</a>
+      <hr>
+      <form action="/movies" method="GET" class="form-inline">
+        <input id="search-bar" class="form-control" name="search" type="search" placeholder="Search">
+        <button class="btn btn-primary mx-2" id="search-button" type="submit">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+    </div>
+  </header>
+
+  <div class="row text-center">
+    <% movies.forEach(function(movie){ %>
+      <div class="col-lg-3 col-md-4 col-sm-12 mb-4">
+        <div class="card">
+          <img class="card-img-top" src="<%= movie.image %>" alt="<%= movie.name %>">
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= movie.name %>
+            </h5>
+            <a href="/movies/<%= movie._id %>" class="btn btn-primary">More Information</a>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+  </div>
+
+  <% include ../partials/footer %>

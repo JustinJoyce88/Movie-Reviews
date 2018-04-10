@@ -1,0 +1,83 @@
+<% include ../partials/header %>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card" id="img-card">
+        <img class="card-img-top" src="<%= movie.image %>" alt="<%= movie.name %>">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card" id="desc-card">
+        <div class="card-body">
+          <h1 class="card-title">
+            <%= movie.name %>
+          </h1>
+          <p class="float-right">Rating:
+            <%= movie.rating %> out of 5</p>
+          <p class="submit-text">
+            <em>Submitted by:
+              <a href="/users/<%= movie.author.id %>">
+                <%= movie.author.username %>
+              </a>,
+              <%= moment(movie.createdAt).fromNow() %>
+            </em>
+          </p>
+          <hr>
+          <p>
+            <%= movie.description %>
+          </p>
+          <% if(currentUser && movie.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin) { %>
+            <hr>
+            <a class="btn btn-warning btn-sm" href="/movies/<%= movie._id %>/edit">Edit</a>
+            <form class="delete-form" action="/movies/<%= movie._id %>?_method=DELETE" method="POST">
+              <button class="btn btn-danger btn-sm">Delete</button>
+            </form>
+            <% } %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- comments sections -->
+  <div class="row">
+    <div class="card" id="comment-card">
+      <div class="card-body">
+        <h4 id="comment-title">Comments
+          <i class="far fa-comment"></i>
+        </h4>
+        <a class="btn btn-primary float-right" href="/movies/<%= movie._id %>/comments/new">
+          <i class="fas fa-plus"></i> Comment</a>
+        <hr>
+        <div class="row">
+          <% movie.comments.forEach(function(comment){ %>
+            <div class="col-md-12 mb-2">
+              <div class="card">
+                <div class="card-body">
+                  <p class="float-right">
+                    <%= moment(comment.createdAt).fromNow() %>
+                  </p>
+                  <p class="card-title">
+                    <strong>
+                      <%= comment.author.username %>
+                    </strong>
+                  </p>
+                  <p class="card-text">
+                    <%= comment.text %>
+                  </p>
+                  <% if(currentUser && comment.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin) { %>
+                    <div class="float-right">
+                      <a class="btn btn-sm btn-warning" href="/movies/<%=movie._id %>/comments/<%= comment._id %>/edit">Edit</a>
+                      <form class="delete-form" action="/movies/<%=movie._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-sm btn-danger">Delete</button>
+                      </form>
+                    </div>
+                    <% } %>
+                </div>
+              </div>
+            </div>
+            <% }); %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% include ../partials/footer %>
