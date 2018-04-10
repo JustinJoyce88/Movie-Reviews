@@ -5,7 +5,7 @@
     <form action="/movies/<%= movie._id %>/comments" method="POST">
       <legend>Add new comment to <%= movie.name %></legend>
       <div class="form-group">
-        <input class="form-control" type="text" name="comment[text]" placeholder="comment" autofocus>
+        <textarea name="comment[text]" cols="36" rows="5" required></textarea>
       </div>
       <div class="form-group">
         <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>

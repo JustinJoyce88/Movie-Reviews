@@ -5,16 +5,16 @@
     <form action="/movies" method="POST" enctype="multipart/form-data">
       <legend>Create New Movie</legend>
       <div class="form-group">
-        <label for="image">Name *</label>
-        <input class="form-control" type="name" name="movie[name]" placeholder="Name" autofocus required>
+        <label for="name">Name *</label>
+        <input class="form-control" id="name" type="name" name="movie[name]" placeholder="Name" autofocus required>
       </div>
       <div class="form-group">
-        <label for="image">Description</label>
-        <input class="form-control" type="text" name="movie[description]" placeholder="Description">
+        <label for="description">Description *</label>
+        <textarea name="movie[description]" id="description" cols="36" rows="5" required></textarea>
       </div>
       <div class="form-group">
-        <label for="rating">Rating</label>
-        <input class="form-control" type="number" name="movie[rating]" placeholder="Rating" max="5" min="1" step="1">
+        <label for="rating">Rating *</label>
+        <input class="form-control" id="rating" type="number" name="movie[rating]" placeholder="Rating" max="5" min="1" step="1" required>
       </div>
       <div class="form-group">
         <label for="image">Upload Image *</label>

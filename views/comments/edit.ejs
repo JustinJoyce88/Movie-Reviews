@@ -1,19 +1,19 @@
 <% include ../partials/header %>
 
 
-<div class="row justify-content-center">
-  <div class="col-lg-4 col-md-6 col-sm-8">
-    <form action="/movies/<%= movie_id %>/comments/<%= comment._id %>/?_method=PUT" method="POST">
-      <legend>Edit Comment</legend>
-      <div class="form-group">
-        <input class="form-control" type="text" name="comment[text]" value="<%= comment.text %>" autofocus>
-      </div>
-      <div class="form-group">
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
-      </div>
-    </form>
-    <a href="/movies">Go Back</a>
+  <div class="row justify-content-center">
+    <div class="col-lg-4 col-md-6 col-sm-8">
+      <form action="/movies/<%= movie_id %>/comments/<%= comment._id %>/?_method=PUT" method="POST">
+        <legend>Edit Comment</legend>
+        <div class="form-group">
+          <textarea name="comment[text]" cols="36" rows="5" required><%= comment.text %></textarea>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+        </div>
+      </form>
+      <a href="/movies">Go Back</a>
+    </div>
   </div>
-</div>
 
-<% include ../partials/footer %>
+  <% include ../partials/footer %>
