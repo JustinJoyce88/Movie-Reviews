@@ -85,6 +85,10 @@ textarea {
   background-color: #222f3e !important;
 }
 
+.navbar a {
+  color: #999 !important;
+}
+
 /* MOVIE LIST */
 
 .container .jumbotron {
@@ -208,7 +212,7 @@ textarea {
   #search-button {
     width: 3em;
   }
-  
+
   .container .jumbotron {
     padding: 1em 0;
   }
